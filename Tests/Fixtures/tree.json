@@ -1,0 +1,42 @@
+{
+  "id": "1191bc63be0b8133c5301c5d",
+  "viewType": "generic.card",
+  "text": "Parent packet",
+  "children": [
+    {
+      "id": "fa691d9832dabd4464737c61",
+      "viewType": "generic.text",
+      "text": "First child",
+      "provenance": {
+        "surface": "public",
+        "lane": "deliberate",
+        "plane": "face",
+        "module": "test"
+      },
+      "frontierExcluded": false
+    },
+    {
+      "id": "399eff05469ff0fcebf04fa7",
+      "viewType": "loop.evidence",
+      "text": "Second child",
+      "evidence": [
+        "exp_123",
+        "tool_456"
+      ],
+      "provenance": {
+        "surface": "tool",
+        "lane": "deliberate",
+        "plane": "face",
+        "module": "test"
+      },
+      "frontierExcluded": false
+    }
+  ],
+  "provenance": {
+    "surface": "public",
+    "lane": "deliberate",
+    "plane": "face",
+    "module": "test"
+  },
+  "frontierExcluded": false
+}

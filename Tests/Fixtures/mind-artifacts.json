@@ -1,0 +1,192 @@
+{
+  "build_decide": [
+    {
+      "id": "mind-decision-packet-1",
+      "viewType": "k0.decision",
+      "text": "state: native Mind verdict surface. context: 2 source atoms and 2 evidence ids. observation: staged for founder decision. consider: Decide whether the iPad surface is the right judgment lane.",
+      "fields": {
+        "outputId": "decision-1",
+        "outputType": "build_decide",
+        "kind": "LoopRecommendation",
+        "label": "native Mind verdict surface",
+        "decision": "native Mind verdict surface",
+        "evidenceIds": ["atom-a", "atom-b"],
+        "nextAction": "Decide whether the iPad surface is the right judgment lane.",
+        "siblings": [],
+        "decisionCard": {
+          "asked": "Should verdict capture happen on iPad?",
+          "read": "The live mind output has two source atoms.",
+          "assumed": "Fast founder review matters more than dense audit metadata.",
+          "missing": "No material missing angle remains.",
+          "pick": "Build the iPad surface.",
+          "why": "The daemon already serves the golden-slice outputs.",
+          "whatWouldChangeIt": "If the daemon output shape stops carrying stable ids.",
+          "next": "Ship the smallest reversible verdict panel."
+        }
+      },
+      "evidence": ["atom-a", "atom-b"],
+      "siblings": [],
+      "action": {
+        "kind": "next_action",
+        "target": "Decide whether the iPad surface is the right judgment lane."
+      },
+      "confidence": 0.82,
+      "provenance": {
+        "surface": "mind-surface",
+        "lane": "deliberate",
+        "plane": "mind",
+        "module": "server.artifacts"
+      },
+      "frontierExcluded": true
+    }
+  ],
+  "candidates": [
+    {
+      "id": "mind-decision-packet-1",
+      "viewType": "k0.decision",
+      "text": "state: native Mind verdict surface. context: 2 source atoms and 2 evidence ids. observation: staged for founder decision. consider: Decide whether the iPad surface is the right judgment lane.",
+      "fields": {
+        "outputId": "decision-1",
+        "outputType": "build_decide",
+        "kind": "LoopRecommendation",
+        "label": "native Mind verdict surface",
+        "decision": "native Mind verdict surface",
+        "evidenceIds": ["atom-a", "atom-b"],
+        "nextAction": "Decide whether the iPad surface is the right judgment lane.",
+        "siblings": []
+      },
+      "evidence": ["atom-a", "atom-b"],
+      "siblings": [],
+      "confidence": 0.82,
+      "provenance": {
+        "surface": "mind-surface",
+        "lane": "deliberate",
+        "plane": "mind",
+        "module": "server.artifacts"
+      },
+      "frontierExcluded": true
+    }
+  ],
+  "themes_open_loops": [
+    {
+      "id": "mind-theme-packet-1",
+      "viewType": "loop.evidence",
+      "text": "state: calm judgment capture. context: 3 source atoms and 3 evidence ids. observation: founder needs a fast, honest pass/fail-ish lane for mind outputs. consider: Review the open thread for calm judgment capture.",
+      "fields": {
+        "outputId": "theme-1",
+        "outputType": "themes_open_loops",
+        "kind": "ThemeSummary",
+        "label": "calm judgment capture",
+        "evidenceIds": ["atom-c", "atom-d", "atom-e"],
+        "atomIds": ["atom-c", "atom-d", "atom-e"],
+        "sourceAtomIds": ["atom-c", "atom-d", "atom-e"],
+        "siblings": ["sibling-1", "sibling-2"],
+        "observation": "Founder needs a fast, honest pass/fail-ish lane for mind outputs.",
+        "considerations": [
+          "The surface should keep one decision in focus.",
+          "Errors should remain visible until retried."
+        ],
+        "nextAction": "Review the open thread for calm judgment capture.",
+        "openLoop": true
+      },
+      "evidence": ["atom-c", "atom-d", "atom-e"],
+      "siblings": ["sibling-1", "sibling-2"],
+      "action": {
+        "kind": "next_action",
+        "target": "Review the open thread for calm judgment capture."
+      },
+      "confidence": 0.74,
+      "provenance": {
+        "surface": "mind-surface",
+        "lane": "deliberate",
+        "plane": "mind",
+        "module": "server.artifacts"
+      },
+      "frontierExcluded": true
+    }
+  ],
+  "resurfaced": [],
+  "new_ideas": [],
+  "outputSections": [
+    {
+      "key": "build_decide",
+      "label": "Build decisions",
+      "items": [
+        {
+          "id": "mind-decision-packet-1",
+          "viewType": "k0.decision",
+          "text": "state: native Mind verdict surface. context: 2 source atoms and 2 evidence ids. observation: staged for founder decision. consider: Decide whether the iPad surface is the right judgment lane.",
+          "fields": {
+            "outputId": "decision-1",
+            "outputType": "build_decide",
+            "kind": "LoopRecommendation",
+            "label": "native Mind verdict surface",
+            "decision": "native Mind verdict surface",
+            "evidenceIds": ["atom-a", "atom-b"],
+            "nextAction": "Decide whether the iPad surface is the right judgment lane.",
+            "siblings": []
+          },
+          "evidence": ["atom-a", "atom-b"],
+          "siblings": [],
+          "confidence": 0.82,
+          "provenance": {
+            "surface": "mind-surface",
+            "lane": "deliberate",
+            "plane": "mind",
+            "module": "server.artifacts"
+          },
+          "frontierExcluded": true
+        }
+      ]
+    },
+    {
+      "key": "themes_open_loops",
+      "label": "Themes and open loops",
+      "items": [
+        {
+          "id": "mind-theme-packet-1",
+          "viewType": "loop.evidence",
+          "text": "state: calm judgment capture. context: 3 source atoms and 3 evidence ids. observation: founder needs a fast, honest pass/fail-ish lane for mind outputs. consider: Review the open thread for calm judgment capture.",
+          "fields": {
+            "outputId": "theme-1",
+            "outputType": "themes_open_loops",
+            "kind": "ThemeSummary",
+            "label": "calm judgment capture",
+            "evidenceIds": ["atom-c", "atom-d", "atom-e"],
+            "siblings": ["sibling-1", "sibling-2"],
+            "observation": "Founder needs a fast, honest pass/fail-ish lane for mind outputs.",
+            "considerations": [
+              "The surface should keep one decision in focus.",
+              "Errors should remain visible until retried."
+            ],
+            "nextAction": "Review the open thread for calm judgment capture.",
+            "openLoop": true
+          },
+          "evidence": ["atom-c", "atom-d", "atom-e"],
+          "siblings": ["sibling-1", "sibling-2"],
+          "confidence": 0.74,
+          "provenance": {
+            "surface": "mind-surface",
+            "lane": "deliberate",
+            "plane": "mind",
+            "module": "server.artifacts"
+          },
+          "frontierExcluded": true
+        }
+      ]
+    }
+  ],
+  "priorVerdicts": [
+    {
+      "passId": "2026-07-04",
+      "date": "2026-07-04",
+      "outputType": "build_decide",
+      "outputId": "decision-1",
+      "label": "native Mind verdict surface",
+      "verdict": "nod"
+    }
+  ],
+  "evalDate": "2026-07-04",
+  "generatedAt": "2026-07-04T07:00:00.000Z",
+  "source": "cs-k"
+}

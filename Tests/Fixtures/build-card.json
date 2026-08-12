@@ -1,0 +1,43 @@
+{
+  "id": "build-card-1",
+  "viewType": "build.card",
+  "text": "Approve U4 visual polish",
+  "fields": {
+    "title": "Approve U4 visual polish",
+    "body": "The iPad Build tab is ready for a founder decision.",
+    "status": "raised",
+    "tier": "tailnet",
+    "unitId": "U4",
+    "options": [
+      {
+        "id": "approve",
+        "label": "Approve",
+        "consequence": "Allow the plan to run."
+      },
+      {
+        "id": "reject",
+        "label": "Reject",
+        "consequence": "Stop this draft and keep the runner idle."
+      }
+    ],
+    "futureCardField": {
+      "safeToIgnore": true
+    }
+  },
+  "action": {
+    "kind": "build.card.answer",
+    "target": "answer-build-card-1",
+    "id": "answer-build-card-1",
+    "intent": "build.card.answer",
+    "args": {
+      "cardId": "build-card-1"
+    }
+  },
+  "provenance": {
+    "surface": "build",
+    "lane": "runner",
+    "plane": "agent",
+    "module": "build-cards"
+  },
+  "frontierExcluded": false
+}

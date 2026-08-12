@@ -1,0 +1,2045 @@
+{
+  "id": "k-catalog",
+  "version": "1.15.3",
+  "comment": "Evolution is additive-only: never delete or repurpose components, props, variants, interaction states, or calm-tech fields; add new names and deprecate old names with replacement notes. Motion note 1.7.0: KStyle.ease is the founder-blessed zen timing curve; springs are forbidden; reduced motion removes movement animations while retaining opacity feedback through easeFast. Typography and haptics note 1.8.0: KStyle font tokens scale through UIFontMetrics with size-specific tracking, and semantic commit events route to sensory feedback triggers. Cadence note 1.9.2: KBlockRow owns the active-bandish lifecycle stream, KNowPanel is deprecated for cadence, signal/ring colors resolve through KStyle tokens, and non-current cadence rows plus sidebar stats sit directly on the environment haze. Provenance catalog note 1.10.0: A2UIPanel/ProvenanceCard/EvidenceRow/ConfidenceBadge/ClaimStatus/ChangeActionBar are the shared k0.provenance/claim/change/eval_score/evolve_report + loop.evidence composition (design-system plan 003 U5); confidence/status resolve through KSignal only, never a new hue. Control-taxonomy note 1.11.0: founder-blessed mind-v18, bio-v11, cadence-v7, and chat-v16 establish uppercase inset-track selectors, a circular 44pt input control, the filled-primary/hairline-secondary/naked-archive verdict register, quiet borderless acts, and the named cadence selector color sequence; KBlockRow and KNowPanel are descriptor-only deprecations replaced by BandishCard. Chat-v16 motion note 1.11.1: named zen-curve tokens own in-place expansion, stack continuity, append-only history, thinking-to-answer crossfade, and chrome reveal; status dots breathe opacity only. Nav note 1.12.0: KNavBar is the additive floating root nav — circle-family icon capsule, bottom bar on compact width and right side rail on regular width, selection is an ink-bright glyph plus a hairline ring and never a fill; KTabStrip remains the inset-track text selector. Chat grammar note 1.13.0: KChatVerbDrawer and KChatActionRow are the chat-v33 grammar surface — the verb drawer keeps its receipt inside and the three-tier action row is latest-only with ✓-chip demarcation; a chosen action is a command, never an utterance. Selector grammar note 1.14.0: KSelectorStrip is the shared in-panel uppercase inset-track selector for Bio's state and biology/meditation domain bars; wider 44pt targets, a quieter 48pt track, and token-owned motion keep the language singular. Loading grammar note 1.15.0: KLoadingPrimitive is the shared no-shimmer skeleton or quiet loading-dot treatment for every fetch-bound surface; loading never reads as empty or unreachable. Dead-code sweep note 1.15.1: BuildWorkingArea, BuildIntentInput, BuildStreamColumn, BuildReportRail, BuildReportInlineCard, ChatMealQuickEntryRow, ContextBar's view, BioLogEntryRow, and CadenceRestStripModel are deprecated retired names; their coverage entries are removed, while live model/catalog history remains additive. Selector refinement note 1.15.2: KSelectorStrip inherits the bandish mode-pill inset, sibling seam, compact visual height, tighter side padding, and separate 44pt hit floor across Bio and retro consumers. Loading audit-hook note 1.15.3: KLoadingPrimitive additionally exposes its accessibility identifier through an in-tree 1×1 clear marker sibling because grouped-element exposure is context-flaky under XCUI; visual treatment is unchanged.",
+  "components": [
+    {
+      "name": "KBlockRow",
+      "semanticRole": "deprecated BandishCard re-copy retained as catalog history only",
+      "deprecated": true,
+      "props": [
+        {
+          "name": "timeText",
+          "type": "String",
+          "required": true,
+          "description": "lowercase or numeric time gutter copy"
+        },
+        {
+          "name": "signal",
+          "type": "KSignal",
+          "required": true,
+          "description": "semantic dot signal"
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "required": true,
+          "description": "primary block text"
+        },
+        {
+          "name": "detail",
+          "type": "String?",
+          "required": false,
+          "description": "secondary block description"
+        },
+        {
+          "name": "why",
+          "type": "String?",
+          "required": false,
+          "description": "secondary reason text from the served block"
+        },
+        {
+          "name": "typeLabel",
+          "type": "String?",
+          "required": false,
+          "description": "quiet block type metadata"
+        },
+        {
+          "name": "titleSuffix",
+          "type": "String?",
+          "required": false,
+          "description": "small dim title suffix such as work brain state"
+        },
+        {
+          "name": "badge",
+          "type": "String?",
+          "required": false,
+          "description": "one-word status such as now or next"
+        },
+        {
+          "name": "content",
+          "type": "BlockContent?",
+          "required": false,
+          "description": "pure typed-bandish rendering contract: optional metaSuffix appended to the mono metadata line, detailLines rendered as KMonoCaption rows under why, checklist rendered as KChecklistRow rows, and liveLine ignored on timeline rows"
+        },
+        {
+          "name": "timeGutter",
+          "type": "KBlockTimeGutter?",
+          "required": false,
+          "description": "start/duration gutter with optional struck original values"
+        },
+        {
+          "name": "dotColor",
+          "type": "Color?",
+          "required": false,
+          "description": "ring-token override for the dot"
+        },
+        {
+          "name": "activeFillColor",
+          "type": "Color?",
+          "required": false,
+          "description": "ring-token fill for started current cards"
+        },
+        {
+          "name": "surfaceTone",
+          "type": "KBlockRowSurfaceTone",
+          "required": false,
+          "description": "dark-glass default or light-glass cadence stream tone"
+        },
+        {
+          "name": "variant",
+          "type": "KBlockRowVariant",
+          "required": false,
+          "description": "current, upcoming, or elapsed hierarchy"
+        },
+        {
+          "name": "actionState",
+          "type": "KBlockActionState",
+          "required": false,
+          "description": "available, started, or completed lifecycle state"
+        },
+        {
+          "name": "elapsedText",
+          "type": "String?",
+          "required": false,
+          "description": "live mm:ss elapsed text"
+        },
+        {
+          "name": "progressRatio",
+          "type": "Double?",
+          "required": false,
+          "description": "started-card left-to-right progress fraction"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "encoded interaction state"
+        },
+        {
+          "name": "onStart",
+          "type": "(() -> Void)?",
+          "required": false,
+          "description": "tap-to-start handler for current available cards"
+        },
+        {
+          "name": "onComplete",
+          "type": "(() -> Void)?",
+          "required": false,
+          "description": "trailing complete affordance handler"
+        },
+        {
+          "name": "onResume",
+          "type": "(() -> Void)?",
+          "required": false,
+          "description": "trailing resume affordance handler"
+        },
+        {
+          "name": "onTap",
+          "type": "(() -> Void)?",
+          "required": false,
+          "description": "optional detail-route tap handler"
+        },
+        {
+          "name": "accessibilityIdentifier",
+          "type": "String?",
+          "required": false,
+          "description": "optional stable UI-test hook"
+        },
+        {
+          "name": "accessory",
+          "type": "View",
+          "required": false,
+          "description": "optional trailing accessory"
+        },
+        {
+          "name": "footer",
+          "type": "View",
+          "required": false,
+          "description": "optional in-card footer content"
+        }
+      ],
+      "variants": [
+        "current",
+        "upcoming",
+        "elapsed"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "deprecated: use BandishCard for cadence and build timeline rows"
+        ],
+        "neverUse": [
+          "never instantiate in product or showcase code",
+          "never extend this descriptor with new behavior"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 2
+      }
+    },
+    {
+      "name": "KBlockDetail",
+      "semanticRole": "single-column block detail route with title, time, why, metadata, detail sections, and optional quiet actions",
+      "props": [
+        {
+          "name": "title",
+          "type": "String",
+          "required": true,
+          "description": "primary block title"
+        },
+        {
+          "name": "timeText",
+          "type": "String?",
+          "required": false,
+          "description": "start time and duration copy"
+        },
+        {
+          "name": "why",
+          "type": "String?",
+          "required": false,
+          "description": "block why line"
+        },
+        {
+          "name": "meta",
+          "type": "String?",
+          "required": false,
+          "description": "mode, ring, type, and type-specific metadata"
+        },
+        {
+          "name": "sections",
+          "type": "[DetailSection]",
+          "required": true,
+          "description": "KDetailSection rendering contract: optional header, mono detail lines, and optional KChecklistRow checklist"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "detail interaction state"
+        },
+        {
+          "name": "onChecklistToggle",
+          "type": "((ChecklistItem) -> Void)?",
+          "required": false,
+          "description": "optional checklist toggle handler"
+        },
+        {
+          "name": "actions",
+          "type": "View",
+          "required": true,
+          "description": "quiet action row slot"
+        }
+      ],
+      "variants": [
+        "block-detail"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for cadence block drill-ins that preserve type-specific richness after founder intent",
+          "use when DetailSection lines and checklist rows need one quiet reading column"
+        ],
+        "neverUse": [
+          "never use as an inline timeline expansion",
+          "never place inside a card or secondary sheet"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "focal",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KSensesRail",
+      "semanticRole": "ambient regular-width rail of source-labeled body, capacity, and nutrition sense groups",
+      "props": [
+        {
+          "name": "groups",
+          "type": "[KSensesRailGroup]",
+          "required": true,
+          "description": "body, capacity, and nutrition groups with source labels and lines"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "rail interaction state"
+        },
+        {
+          "name": "onSelectGroup",
+          "type": "((KSensesRailGroup) -> Void)?",
+          "required": false,
+          "description": "optional quiet group selection handler"
+        }
+      ],
+      "variants": [
+        "rail"
+      ],
+      "interactionStates": [
+        "default",
+        "empty",
+        "stale",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use on regular-width cadence for peripheral body, capacity, and nutrition readings",
+          "use only when existing fetched data has at least one line to render"
+        ],
+        "neverUse": [
+          "never use card material, borders, or fills for the rail groups",
+          "never render placeholder dashes for absent sources"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 3
+      }
+    },
+    {
+      "name": "KNowPanel",
+      "semanticRole": "deprecated duplicate of the current BandishCard state retained as catalog history only",
+      "deprecated": true,
+      "props": [
+        {
+          "name": "eyebrow",
+          "type": "String",
+          "required": false,
+          "description": "mono now label"
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "required": true,
+          "description": "largest active block title"
+        },
+        {
+          "name": "why",
+          "type": "String?",
+          "required": false,
+          "description": "secondary why line"
+        },
+        {
+          "name": "meta",
+          "type": "String?",
+          "required": false,
+          "description": "remaining time, mode, ring, and type metadata"
+        },
+        {
+          "name": "detail",
+          "type": "String?",
+          "required": false,
+          "description": "type-specific quiet detail line"
+        },
+        {
+          "name": "content",
+          "type": "BlockContent?",
+          "required": false,
+          "description": "pure typed-bandish rendering contract: optional metaSuffix appended to the mono metadata line, detailLines rendered as KMonoCaption rows under why, checklist rendered as KChecklistRow rows, and liveLine rendered as quiet mono copy under the countdown"
+        },
+        {
+          "name": "nextTimeText",
+          "type": "String?",
+          "required": false
+        },
+        {
+          "name": "nextTitleText",
+          "type": "String?",
+          "required": false
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "default, empty, stale, or offline state"
+        },
+        {
+          "name": "onTap",
+          "type": "(() -> Void)?",
+          "required": false,
+          "description": "optional detail-route tap handler"
+        },
+        {
+          "name": "actions",
+          "type": "View",
+          "required": true,
+          "description": "quiet action row slot"
+        }
+      ],
+      "variants": [
+        "instrument"
+      ],
+      "interactionStates": [
+        "default",
+        "empty",
+        "stale",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "deprecated: use the current BandishCard lifecycle state"
+        ],
+        "neverUse": [
+          "never instantiate in product or showcase code",
+          "never extend this descriptor with new behavior"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KNextRow",
+      "semanticRole": "quiet mono next line with label, start time, and title",
+      "props": [
+        {
+          "name": "timeText",
+          "type": "String?",
+          "required": false,
+          "description": "next block start time"
+        },
+        {
+          "name": "title",
+          "type": "String?",
+          "required": false,
+          "description": "next block title"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "default, empty, stale, or offline state"
+        }
+      ],
+      "variants": [
+        "next"
+      ],
+      "interactionStates": [
+        "default",
+        "empty",
+        "stale",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use directly under cadence now to name the next block without promoting it",
+          "use when start time and title should scan as metadata"
+        ],
+        "neverUse": [
+          "never use for full timeline rows",
+          "never decorate the next item with a card or badge"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KRestStrip",
+      "semanticRole": "single quiet mono line for the remaining day shape after next",
+      "props": [
+        {
+          "name": "text",
+          "type": "String?",
+          "required": false,
+          "description": "compact remaining block summary"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "default, empty, stale, or offline state"
+        }
+      ],
+      "variants": [
+        "remaining"
+      ],
+      "interactionStates": [
+        "default",
+        "empty",
+        "stale",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use below KNextRow to keep the day's remaining shape peripheral",
+          "use for up to four compact start-time and title pairs"
+        ],
+        "neverUse": [
+          "never show elapsed blocks here",
+          "never use as a scrollable or tappable timeline"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KCapacityLine",
+      "semanticRole": "quiet mono remaining capacity line with optional secondary-route tap",
+      "props": [
+        {
+          "name": "text",
+          "type": "String?",
+          "required": false,
+          "description": "formatted remaining per-mode capacity line"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "default, empty, stale, or offline state"
+        },
+        {
+          "name": "onSelect",
+          "type": "(() -> Void)?",
+          "required": false,
+          "description": "secondary-route opener"
+        }
+      ],
+      "variants": [
+        "remaining-capacity"
+      ],
+      "interactionStates": [
+        "default",
+        "empty",
+        "stale",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for cadence's peripheral per-mode attention budget summary",
+          "use when tapping opens the secondary capacity drawer"
+        ],
+        "neverUse": [
+          "never show zero or missing modes",
+          "never promote capacity above the now instrument"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KPaperCard",
+      "semanticRole": "quiet paper-tone card for nudge, review, and decision content",
+      "props": [
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "card interaction state"
+        },
+        {
+          "name": "content",
+          "type": "View",
+          "required": true,
+          "description": "card body supplied by caller"
+        }
+      ],
+      "variants": [
+        "nudge",
+        "review",
+        "decision"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for the lighter card tone extracted from cadence nudges and review cards",
+          "use when a surface needs slight grouping without platform glass"
+        ],
+        "neverUse": [
+          "never nest inside another card",
+          "never use for chrome, decoration, or marketing-style panels"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KGlassCard",
+      "semanticRole": "semantic glass-tone card for depth panels and scrollable utility surfaces",
+      "props": [
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "card interaction state"
+        },
+        {
+          "name": "content",
+          "type": "View",
+          "required": true,
+          "description": "card body supplied by caller"
+        }
+      ],
+      "variants": [
+        "panel",
+        "depth",
+        "inline"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for the stronger glass tone extracted from build depth panels and evidence blocks",
+          "use when the card needs to survive future platform material changes"
+        ],
+        "neverUse": [
+          "never introduce a third card tone",
+          "never expose platform material directly at call sites"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KColumnPanel",
+      "semanticRole": "sanctioned floating column panel tone over the camera layer",
+      "props": [
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "panel interaction state"
+        },
+        {
+          "name": "content",
+          "type": "View",
+          "required": true,
+          "description": "tab column body supplied by caller"
+        }
+      ],
+      "variants": [
+        "column-panel"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for genuine floating panels, detail routes, drawers, and sheets",
+          "use through kColumnPanelTone only when content needs a separate material layer"
+        ],
+        "neverUse": [
+          "never use as the default five-tab root shell",
+          "never use inside cards, rows, or packet content",
+          "never expose platform material directly at call sites"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KActRow",
+      "semanticRole": "quiet lowercase text actions separated by middle dots",
+      "props": [
+        {
+          "name": "actions",
+          "type": "[KActItem]",
+          "required": true,
+          "description": "ordered low-chrome actions"
+        },
+        {
+          "name": "selectedActionIDs",
+          "type": "Set<String>",
+          "required": false,
+          "description": "selected action ids rendered at the calm active emphasis"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "row interaction state"
+        },
+        {
+          "name": "onSelect",
+          "type": "(KActItem) -> Void",
+          "required": true,
+          "description": "selection handler"
+        }
+      ],
+      "variants": [
+        "cadence",
+        "admin",
+        "build",
+        "mind-feedback"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for quiet answerable text acts such as complete, skip, reschedule, approve, or retry",
+          "use when recognition of available actions matters more than visual priority"
+        ],
+        "neverUse": [
+          "never use for the fixed mind verdict bar",
+          "never add icons, filled pills, or badges"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KOptionButton",
+      "semanticRole": "build decision option button with primary fill or quiet hairline treatment",
+      "props": [
+        {
+          "name": "label",
+          "type": "String",
+          "required": true,
+          "description": "button copy"
+        },
+        {
+          "name": "variant",
+          "type": "KOptionButtonVariant",
+          "required": false,
+          "description": "primary filled or quiet hairline treatment"
+        },
+        {
+          "name": "isEnabled",
+          "type": "Bool",
+          "required": false,
+          "description": "enabled action state"
+        },
+        {
+          "name": "isPending",
+          "type": "Bool",
+          "required": false,
+          "description": "optimistic pending marker"
+        },
+        {
+          "name": "isConfirming",
+          "type": "Bool",
+          "required": false,
+          "description": "second-tap confirmation label state"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "button interaction state"
+        },
+        {
+          "name": "onSelect",
+          "type": "() -> Void",
+          "required": true,
+          "description": "selection handler"
+        }
+      ],
+      "variants": [
+        "primary-filled",
+        "quiet-hairline",
+        "secondary-hairline",
+        "archive-naked"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for build card options that need a primary-filled or quiet-hairline treatment",
+          "use when kill-class options replace their label with sure? on the second-tap confirmation window"
+        ],
+        "neverUse": [
+          "never use for quiet text acts that belong in KActRow",
+          "never introduce local button styles for build card options"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KMonoCaption",
+      "semanticRole": "monospaced lowercase status, staleness, metadata, or footer caption",
+      "props": [
+        {
+          "name": "text",
+          "type": "String",
+          "required": true,
+          "description": "caption copy"
+        },
+        {
+          "name": "variant",
+          "type": "KMonoCaptionVariant",
+          "required": false,
+          "description": "caption semantic variant"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "caption state"
+        }
+      ],
+      "variants": [
+        "status",
+        "staleness",
+        "footer",
+        "metadata",
+        "inline-error"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for written status visibility and inline recovery messages",
+          "use for stale snapshot, footer, and metadata lines"
+        ],
+        "neverUse": [
+          "never use for primary content paragraphs",
+          "never hide errors in alerts or icon-only controls"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KStatusDot",
+      "semanticRole": "semantic signal dot for live, attention, error, offline, or idle state",
+      "props": [
+        {
+          "name": "signal",
+          "type": "KSignal",
+          "required": true,
+          "description": "semantic signal color"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "dot interaction state"
+        },
+        {
+          "name": "size",
+          "type": "KStatusDotSize",
+          "required": false,
+          "description": "small, regular, or large dot size"
+        }
+      ],
+      "variants": [
+        "idle",
+        "live",
+        "attention",
+        "error",
+        "offline"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use when color is reserved for semantic connection, block, or unit signals",
+          "use alongside copy when the state needs initial recognition"
+        ],
+        "neverUse": [
+          "never use as decoration",
+          "never encode arbitrary categories with color"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KLoadingPrimitive",
+      "semanticRole": "shared no-shimmer fetch loading treatment with dim skeleton lines or a quiet loading dot",
+      "props": [
+        {
+          "name": "variant",
+          "type": "KLoadingVariant",
+          "required": false,
+          "description": "skeleton or inline loading dot"
+        },
+        {
+          "name": "lineCount",
+          "type": "Int",
+          "required": false,
+          "description": "number of skeleton lines"
+        },
+        {
+          "name": "label",
+          "type": "String",
+          "required": false,
+          "description": "accessible loading label"
+        },
+        {
+          "name": "accessibilityIdentifier",
+          "type": "String?",
+          "required": false,
+          "description": "load-bearing audit identifier"
+        }
+      ],
+      "variants": [
+        "skeleton",
+        "dot"
+      ],
+      "interactionStates": [
+        "loading"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for every fetch that has not resolved to loaded, empty, or unreachable",
+          "use skeleton for content-shaped waits and dot for an inline stream wait"
+        ],
+        "neverUse": [
+          "never shimmer, pulse, or spin",
+          "never use as the empty or unreachable state",
+          "never create a private loading skeleton or loading dot in a surface"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KTabStrip",
+      "semanticRole": "root doctrine selector with mono uppercase labels in an inset track and a filled active state",
+      "props": [
+        {
+          "name": "selection",
+          "type": "Binding<KAppTab>",
+          "required": true,
+          "description": "active tab binding"
+        },
+        {
+          "name": "cadenceNeedsAttention",
+          "type": "Bool",
+          "required": false,
+          "description": "cadence attention dot"
+        },
+        {
+          "name": "chatHasUnread",
+          "type": "Bool",
+          "required": false,
+          "description": "chat unread dot"
+        },
+        {
+          "name": "openBuildCards",
+          "type": "Int",
+          "required": false,
+          "description": "build waiting dot count source"
+        },
+        {
+          "name": "unjudgedMindOutputs",
+          "type": "Int",
+          "required": false,
+          "description": "mind waiting dot count source"
+        },
+        {
+          "name": "adminDueTodayItems",
+          "type": "Int",
+          "required": false,
+          "description": "admin due-today dot count source"
+        },
+        {
+          "name": "staleTabs",
+          "type": "Set<KAppTab>",
+          "required": false,
+          "description": "tabs whose dot should render stale"
+        },
+        {
+          "name": "notificationItems",
+          "type": "[KNotification]",
+          "required": false,
+          "description": "unified notification rows that own tab dot presence"
+        }
+      ],
+      "variants": [
+        "root",
+        "attention-dot",
+        "stale-dot"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use only for the app's top doctrine selector",
+          "use dots for waiting state without counts"
+        ],
+        "neverUse": [
+          "never add icons, blue tint, or numbered badges",
+          "never render the active tab as text-only",
+          "never use for in-panel segmented controls"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 5
+      }
+    },
+    {
+      "name": "KSelectorStrip",
+      "semanticRole": "shared in-panel selector with uppercase labels, compact bandish pills, and one filled active state",
+      "props": [
+        {
+          "name": "selection",
+          "type": "Binding<Selection>",
+          "required": true,
+          "description": "active selector value"
+        },
+        {
+          "name": "items",
+          "type": "[KSelectorItem<Selection>]",
+          "required": true,
+          "description": "stable selector values, labels, and accessibility hooks"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "interaction state"
+        },
+        {
+          "name": "accessibilityIdentifier",
+          "type": "String?",
+          "required": false,
+          "description": "stable container UI-test hook"
+        }
+      ],
+      "variants": [
+        "inset-track"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for in-panel tabs and domain selectors that share the uppercase inset-track grammar",
+          "use when every item has a stable selection value and a 44pt target"
+        ],
+        "neverUse": [
+          "never use for root navigation: use KTabStrip or KNavBar",
+          "never use for progress/status segments with no selection",
+          "never add a second fill, border, icon, or numbered badge"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KNavBar",
+      "semanticRole": "floating root nav — circle-family icon capsule, bottom bar on compact width and right side rail on regular width, with quiet ink-bright ring selection",
+      "props": [
+        {
+          "name": "selection",
+          "type": "Binding<KAppTab>",
+          "required": true,
+          "description": "active tab binding"
+        },
+        {
+          "name": "axis",
+          "type": "Axis",
+          "required": false,
+          "description": "horizontal bottom bar or vertical side rail"
+        },
+        {
+          "name": "cadenceNeedsAttention",
+          "type": "Bool",
+          "required": false,
+          "description": "cadence attention dot"
+        },
+        {
+          "name": "chatHasUnread",
+          "type": "Bool",
+          "required": false,
+          "description": "chat unread dot"
+        },
+        {
+          "name": "openBuildCards",
+          "type": "Int",
+          "required": false,
+          "description": "build waiting dot count source"
+        },
+        {
+          "name": "unjudgedMindOutputs",
+          "type": "Int",
+          "required": false,
+          "description": "mind waiting dot count source"
+        },
+        {
+          "name": "adminDueTodayItems",
+          "type": "Int",
+          "required": false,
+          "description": "admin due-today dot count source"
+        },
+        {
+          "name": "staleTabs",
+          "type": "Set<KAppTab>",
+          "required": false,
+          "description": "tabs whose dot should render stale"
+        }
+      ],
+      "variants": [
+        "bottom-bar",
+        "side-rail"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use as the app's floating root nav",
+          "bottom bar on compact width, right side rail on regular width"
+        ],
+        "neverUse": [
+          "never fill the selected item — selection is an ink-bright glyph plus a hairline ring",
+          "never add accent tint or numbered badges",
+          "never use for in-panel navigation"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 5
+      }
+    },
+    {
+      "name": "KStreamRow",
+      "semanticRole": "quiet aligned stream row with content and optional mono metadata",
+      "props": [
+        {
+          "name": "role",
+          "type": "KStreamRowRole",
+          "required": true,
+          "description": "founder, k, runner, or system stream alignment"
+        },
+        {
+          "name": "meta",
+          "type": "String?",
+          "required": false,
+          "description": "mono metadata rendered under the stream line"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "stream row interaction state"
+        },
+        {
+          "name": "content",
+          "type": "View",
+          "required": true,
+          "description": "row body supplied by caller"
+        }
+      ],
+      "variants": [
+        "founder",
+        "k",
+        "runner",
+        "system"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for chat and build stream rows that need founder/right and k-or-runner/left alignment",
+          "use when stream metadata belongs under the line instead of in a badge"
+        ],
+        "neverUse": [
+          "never use for timeline rows with semantic dots",
+          "never use for cards, summaries, or action clusters"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KProgressStrip",
+      "semanticRole": "quiet progress strip with title, progress copy, and hairline fill",
+      "props": [
+        {
+          "name": "title",
+          "type": "String",
+          "required": true,
+          "description": "lowercase title for the progress subject"
+        },
+        {
+          "name": "progressText",
+          "type": "String",
+          "required": true,
+          "description": "written progress summary"
+        },
+        {
+          "name": "progressRatio",
+          "type": "Double",
+          "required": true,
+          "description": "progress fill ratio clamped between zero and one"
+        },
+        {
+          "name": "variant",
+          "type": "KProgressStripVariant",
+          "required": false,
+          "description": "progress strip variant"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "progress strip interaction state"
+        }
+      ],
+      "variants": [
+        "build-mission"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for a compact mission or unit-progress line inside a route surface",
+          "use when written progress and a single hairline fill need to travel together"
+        ],
+        "neverUse": [
+          "never use as a spinner or ambient animation",
+          "never stack more than one progress strip in the same slot"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KInputBar",
+      "semanticRole": "bottom intent input for chat, admin, and build with one circular 44pt send-or-stop control",
+      "props": [
+        {
+          "name": "text",
+          "type": "Binding<String>",
+          "required": true,
+          "description": "editable intent text"
+        },
+        {
+          "name": "mode",
+          "type": "KInputBarMode",
+          "required": false,
+          "description": "chat, admin, or build line limits and labels"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "input interaction state"
+        },
+        {
+          "name": "statusText",
+          "type": "String?",
+          "required": false,
+          "description": "inline status or recovery copy"
+        },
+        {
+          "name": "disabledReason",
+          "type": "String?",
+          "required": false,
+          "description": "written reason inputs are disabled"
+        },
+        {
+          "name": "onSubmit",
+          "type": "() -> Void",
+          "required": true,
+          "description": "send handler"
+        },
+        {
+          "name": "onStop",
+          "type": "(() -> Void)?",
+          "required": false,
+          "description": "stream stop handler when loading"
+        }
+      ],
+      "variants": [
+        "chat",
+        "admin",
+        "build"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for one-sentence intents in chat, admin intake, and build intent",
+          "use inline text for loading, offline, and error recovery"
+        ],
+        "neverUse": [
+          "never add a second primary control beside send or stop",
+          "never replace inline errors with alerts or spinners"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "focal",
+        "maxSimultaneousCues": 2
+      }
+    },
+    {
+      "name": "KChecklistRow",
+      "semanticRole": "single quiet checklist item with bullet, lowercase title, and done state",
+      "props": [
+        {
+          "name": "title",
+          "type": "String",
+          "required": true,
+          "description": "checklist copy"
+        },
+        {
+          "name": "isDone",
+          "type": "Bool",
+          "required": true,
+          "description": "done state"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "row interaction state"
+        },
+        {
+          "name": "foregroundColor",
+          "type": "Color",
+          "required": false,
+          "description": "semantic foreground inherited by active bandish cards"
+        },
+        {
+          "name": "onToggle",
+          "type": "() -> Void",
+          "required": true,
+          "description": "toggle handler"
+        }
+      ],
+      "variants": [
+        "todo",
+        "done"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for cadence ops checklist lines",
+          "use when the entire row should be a 44pt toggle target"
+        ],
+        "neverUse": [
+          "never use a checkbox chrome glyph",
+          "never truncate the checklist title"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KVerdictBar",
+      "semanticRole": "fixed mind verdict register: filled act-on, hairline nod, naked junk/archive",
+      "props": [
+        {
+          "name": "pendingVerdict",
+          "type": "MindVerdict?",
+          "required": false,
+          "description": "optimistic pending verdict"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "bar interaction state"
+        },
+        {
+          "name": "errorText",
+          "type": "String?",
+          "required": false,
+          "description": "inline retry copy"
+        },
+        {
+          "name": "onVerdict",
+          "type": "(MindVerdict) -> Void",
+          "required": true,
+          "description": "verdict handler"
+        },
+        {
+          "name": "onRetry",
+          "type": "() -> Void",
+          "required": true,
+          "description": "retry handler for inline error"
+        }
+      ],
+      "variants": [
+        "mind"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use only for mind verdict bursts",
+          "use fixed 56pt targets that do not move between outputs"
+        ],
+        "neverUse": [
+          "never give the three verdicts equal bordered treatment",
+          "never change the left-to-right order"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "focal",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KEvidenceBlock",
+      "semanticRole": "monospaced horizontally scrollable evidence, diff, or log block",
+      "props": [
+        {
+          "name": "text",
+          "type": "String",
+          "required": true,
+          "description": "evidence text"
+        },
+        {
+          "name": "variant",
+          "type": "KEvidenceBlockVariant",
+          "required": false,
+          "description": "mono, gate-output, diff, or log-tail variant"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "block interaction state"
+        }
+      ],
+      "variants": [
+        "mono",
+        "gate-output",
+        "diff",
+        "log-tail"
+      ],
+      "interactionStates": [
+        "default",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for build gate output, diffs, log tails, and evidence ids that need monospaced scanning",
+          "use written empty, loading, error, and offline states"
+        ],
+        "neverUse": [
+          "never use for prose paragraphs",
+          "never shimmer or animate loading text"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "focal",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KSummaryStrip",
+      "semanticRole": "waiting-line summary of tappable segments separated by middle dots",
+      "props": [
+        {
+          "name": "segments",
+          "type": "[KWaitingSummarySegment]",
+          "required": true,
+          "description": "waiting segments"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "strip interaction state"
+        },
+        {
+          "name": "onSelect",
+          "type": "(KAppTab) -> Void",
+          "required": true,
+          "description": "tap handler for the segment tab"
+        }
+      ],
+      "variants": [
+        "waiting-line"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for the glance answer to what is waiting on the founder",
+          "use when each segment can route directly to the relevant tab"
+        ],
+        "neverUse": [
+          "never show counts as badges",
+          "never use as a general breadcrumb or nav bar"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 3
+      }
+    },
+    {
+      "name": "KChatVerbDrawer",
+      "semanticRole": "quiet verb drawer for a k reply with receipt and source access",
+      "props": [
+        {
+          "name": "isOpen",
+          "type": "Bool",
+          "required": false,
+          "description": "drawer visibility"
+        },
+        {
+          "name": "receipt",
+          "type": "ChatReceipt",
+          "required": false,
+          "description": "soul version and ref count shown inside the drawer"
+        },
+        {
+          "name": "onSelect",
+          "type": "(KChatVerb) -> Void",
+          "required": true,
+          "description": "verb chosen"
+        }
+      ],
+      "variants": [
+        "message"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use on a k reply after long press or reply swipe",
+          "keep receipt inside the drawer and keep source access inline on regular width"
+        ],
+        "neverUse": [
+          "never add a second backdrop or corner action cluster",
+          "never invent receipt values when the packet is silent"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "KChatActionRow",
+      "semanticRole": "latest-only three-tier next-action row with follow-up slider and chosen receipt chip",
+      "props": [
+        {
+          "name": "actions",
+          "type": "[ChatNextActionItem]",
+          "required": true,
+          "description": "up to three packet actions, primary last"
+        },
+        {
+          "name": "followUps",
+          "type": "[ChatNextActionItem]",
+          "required": false,
+          "description": "up to three follow-up questions behind the chevron"
+        },
+        {
+          "name": "selectedActionID",
+          "type": "String?",
+          "required": false,
+          "description": "chosen action for the check chip"
+        },
+        {
+          "name": "isActive",
+          "type": "Bool",
+          "required": false,
+          "description": "latest-reply row when true"
+        },
+        {
+          "name": "showFullRow",
+          "type": "Bool",
+          "required": false,
+          "description": "long-press restore on a previous turn"
+        },
+        {
+          "name": "isFollowUpPage",
+          "type": "Bool",
+          "required": false,
+          "description": "chevron slider page"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "interaction state"
+        },
+        {
+          "name": "onSelect",
+          "type": "(ChatNextActionItem) -> Void",
+          "required": true,
+          "description": "action tapped — sends chosenActionId only"
+        },
+        {
+          "name": "onFollowUp",
+          "type": "(ChatNextActionItem) -> Void",
+          "required": false,
+          "description": "follow-up tapped — loads the composer"
+        },
+        {
+          "name": "onPageChange",
+          "type": "(Bool) -> Void",
+          "required": false,
+          "description": "slider page changed"
+        },
+        {
+          "name": "onRestoreFullRow",
+          "type": "() -> Void",
+          "required": false,
+          "description": "long-press restore"
+        }
+      ],
+      "variants": [
+        "latest",
+        "previous"
+      ],
+      "interactionStates": [
+        "default",
+        "active",
+        "disabled",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use only when the reply packet emits next-action fields",
+          "right-align the three tiers with the primary action at the right edge",
+          "collapse previous action turns to the chosen checkmark chip"
+        ],
+        "neverUse": [
+          "never fabricate an action, placeholder, or user bubble",
+          "never send action text from this row",
+          "never use a spring or a per-message clock"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "A2UIPanel",
+      "semanticRole": "the one shared composition every provenance-catalog viewType renders through",
+      "props": [
+        {
+          "name": "packet",
+          "type": "ViewPacket",
+          "required": true,
+          "description": "the k0.provenance/claim/change/eval_score/evolve_report or loop.evidence packet to render"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "panel interaction state"
+        },
+        {
+          "name": "onUndo",
+          "type": "() -> Void",
+          "required": false,
+          "description": "invoked from ChangeActionBar's undo affordance for k0.change"
+        },
+        {
+          "name": "onChallenge",
+          "type": "() -> Void",
+          "required": false,
+          "description": "invoked from ChangeActionBar's challenge affordance for k0.change"
+        }
+      ],
+      "variants": [
+        "provenance-panel"
+      ],
+      "interactionStates": [
+        "default",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for every k0.provenance/claim/change/eval_score/evolve_report and loop.evidence packet — one shared wrapper, never five bespoke views"
+        ],
+        "neverUse": [
+          "never bypass A2UIPanel to render a provenance viewType directly"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "ProvenanceCard",
+      "semanticRole": "one observed/proposed/changed provenance snapshot — subject, as-of time, and source evidence",
+      "props": [
+        {
+          "name": "subject",
+          "type": "String?",
+          "required": false,
+          "description": "what the provenance snapshot is about"
+        },
+        {
+          "name": "asOf",
+          "type": "String?",
+          "required": false,
+          "description": "ISO timestamp the snapshot reflects"
+        },
+        {
+          "name": "sourceRefs",
+          "type": "[KEvidenceEntry]",
+          "required": false,
+          "description": "normalized evidence rows from the packet's sourceRefs"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "card interaction state"
+        }
+      ],
+      "variants": [
+        "provenance"
+      ],
+      "interactionStates": [
+        "default",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use inside A2UIPanel for k0.provenance packets"
+        ],
+        "neverUse": [
+          "never render provenance as a bespoke route dashboard — always through A2UIPanel"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "EvidenceRow",
+      "semanticRole": "one compact linked evidence row — statement plus optional surface/timestamp meta",
+      "props": [
+        {
+          "name": "entry",
+          "type": "KEvidenceEntry",
+          "required": true,
+          "description": "the normalized evidence entry to render"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "row interaction state"
+        }
+      ],
+      "variants": [
+        "evidence-row"
+      ],
+      "interactionStates": [
+        "default",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for loop.evidence exposures and k0.provenance sourceRefs inside A2UIPanel",
+          "use to generalize the existing loop.evidence render path — never duplicate it"
+        ],
+        "neverUse": [
+          "never use for the full evidence/diff/log block — that stays KEvidenceBlock"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "ConfidenceBadge",
+      "semanticRole": "semantic confidence level badge for k0.claim/k0.eval_score — maps confidence onto KSignal only",
+      "props": [
+        {
+          "name": "level",
+          "type": "KConfidenceLevel",
+          "required": true,
+          "description": "low/medium/high/calibrated/unknown"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "badge interaction state"
+        }
+      ],
+      "variants": [
+        "low",
+        "medium",
+        "high",
+        "calibrated",
+        "unknown"
+      ],
+      "interactionStates": [
+        "default",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use for k0.claim/k0.eval_score confidence display inside A2UIPanel"
+        ],
+        "neverUse": [
+          "never introduce a new hue for confidence — resolve through KSignal only",
+          "never render a bare numeric percentage without a level label"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "ClaimStatus",
+      "semanticRole": "a k0.claim packet's lifecycle status — proposed, promoted, challenged, or rejected",
+      "props": [
+        {
+          "name": "status",
+          "type": "KClaimLifecycleStatus",
+          "required": true,
+          "description": "proposed/promoted/challenged/rejected"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "status interaction state"
+        }
+      ],
+      "variants": [
+        "proposed",
+        "promoted",
+        "challenged",
+        "rejected"
+      ],
+      "interactionStates": [
+        "default",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use inside A2UIPanel to show a k0.claim's lifecycle state next to its ConfidenceBadge"
+        ],
+        "neverUse": [
+          "never invent a fifth lifecycle state — proposed/promoted/challenged/rejected is the closed set"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "ambient",
+        "maxSimultaneousCues": 1
+      }
+    },
+    {
+      "name": "ChangeActionBar",
+      "semanticRole": "a k0.change packet's before/after diff plus undo and challenge affordances",
+      "props": [
+        {
+          "name": "beforeText",
+          "type": "String?",
+          "required": false,
+          "description": "the prior value"
+        },
+        {
+          "name": "afterText",
+          "type": "String?",
+          "required": false,
+          "description": "the new value"
+        },
+        {
+          "name": "actor",
+          "type": "String?",
+          "required": false,
+          "description": "who/what made the change"
+        },
+        {
+          "name": "state",
+          "type": "KPrimitiveInteractionState",
+          "required": false,
+          "description": "bar interaction state"
+        },
+        {
+          "name": "onUndo",
+          "type": "() -> Void",
+          "required": true,
+          "description": "tap handler for the undo action"
+        },
+        {
+          "name": "onChallenge",
+          "type": "() -> Void",
+          "required": true,
+          "description": "tap handler for the challenge action"
+        }
+      ],
+      "variants": [
+        "change"
+      ],
+      "interactionStates": [
+        "default",
+        "loading",
+        "error",
+        "offline"
+      ],
+      "usageRules": {
+        "whenToUse": [
+          "use inside A2UIPanel for k0.change packets"
+        ],
+        "neverUse": [
+          "never wire undo/challenge to a destructive action without a confirm step upstream"
+        ]
+      },
+      "calmTech": {
+        "interruptionClass": "peripheral",
+        "maxSimultaneousCues": 1
+      }
+    }
+  ]
+}

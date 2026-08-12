@@ -1,0 +1,28 @@
+{
+  "id": "f57bbdfff848b710b39a5dac",
+  "viewType": "generic.table",
+  "text": "Project status",
+  "fields": {
+    "columns": [
+      "Name",
+      "Status"
+    ],
+    "rows": [
+      [
+        "ViewPacket",
+        "ready"
+      ],
+      [
+        "Renderer",
+        "native"
+      ]
+    ]
+  },
+  "provenance": {
+    "surface": "public",
+    "lane": "deliberate",
+    "plane": "face",
+    "module": "test"
+  },
+  "frontierExcluded": false
+}

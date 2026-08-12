@@ -1,0 +1,16 @@
+{
+  "id": "bbbbbbbbbbbbbbbbbbbbbbbb",
+  "viewType": "generic.text",
+  "text": "Raw held content must not render.",
+  "provenance": {
+    "surface": "verbatim-chat",
+    "lane": "sovereign",
+    "plane": "agent",
+    "module": "agui"
+  },
+  "surfaceDecision": {
+    "surface": false,
+    "reason": "held by surface decision"
+  },
+  "frontierExcluded": true
+}

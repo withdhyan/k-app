@@ -1,0 +1,88 @@
+{
+  "id": "build-status-1",
+  "viewType": "build.status",
+  "text": "CE runner U4",
+  "fields": {
+    "plan": {
+      "id": "plan-2026-07-04-001",
+      "title": "Native Build tab",
+      "state": "building",
+      "summary": "Camera-backed iPad surface"
+    },
+    "units": [
+      {
+        "id": "U1",
+        "title": "Build-state contract",
+        "state": "integrated",
+        "age": "12m",
+        "detail": "green"
+      },
+      {
+        "id": "U4",
+        "planId": "plan-2026-07-04-001",
+        "laneId": "lane-a",
+        "title": "cs-ios native Build tab",
+        "state": "building",
+        "age": "2m",
+        "detail": "active lane"
+      },
+      {
+        "id": "U5",
+        "planId": "plan-2026-07-04-001",
+        "laneId": "lane-b",
+        "title": "Decision-card lifecycle",
+        "state": "held",
+        "age": "now",
+        "holdReason": "waiting on founder",
+        "detail": "waiting on founder"
+      }
+    ],
+    "lanes": [
+      {
+        "id": "lane-a",
+        "planId": "plan-2026-07-04-001",
+        "unitId": "U4",
+        "title": "ios-build-tab",
+        "state": "building",
+        "startedAt": "2026-07-04T09:56:00Z",
+        "age": "48s",
+        "detail": "codex"
+      },
+      {
+        "id": "lane-b",
+        "planId": "plan-2026-07-04-001",
+        "unitId": "U5",
+        "title": "route-contract",
+        "state": "recovering",
+        "startedAt": "2026-07-04T09:58:30Z",
+        "age": "4m",
+        "detail": "backoff"
+      }
+    ],
+    "history": [
+      {
+        "id": "h1",
+        "title": "Snapshot emitted on connect",
+        "age": "now"
+      },
+      {
+        "id": "h2",
+        "title": "U4 lane entered build",
+        "age": "2m"
+      }
+    ],
+    "futureNestedBuildField": {
+      "ignoredByOldClients": true
+    }
+  },
+  "futureTopLevelField": {
+    "ignored": true
+  },
+  "provenance": {
+    "surface": "build",
+    "lane": "runner",
+    "plane": "agent",
+    "module": "build-route"
+  },
+  "frontierExcluded": false
+}

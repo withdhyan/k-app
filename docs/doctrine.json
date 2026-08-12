@@ -1,0 +1,419 @@
+{
+ "doctrineId": "k-doctrine",
+ "version": "1.6.0",
+ "evolution": "additive-only: rules may be added or tightened with a version bump; never silently removed or repurposed",
+ "authority": "docs/DESIGN.md is the prose spec; this file is its machine-readable projection; on conflict this file wins for automated checks and DESIGN.md wins for intent",
+ "foundation": {
+  "comment": "always-on rules; no agent, lane, or packet may override",
+  "surface": "ink background; camera stage is view-layer only, global scrim is KStyle.backgroundOpacity; tab content sits on the K environment haze so the room stays present but never photographic",
+  "typography": "typography-first; text opacities .87/.64/.48/.30; interface copy and acts are lowercase; structural selectors are the single uppercase exception and use monospaced type; monospaced remains reserved for selectors, metadata, time, and state words",
+  "chrome": "no borders, boxes, or fills except genuine floating panels, two card tones (paper for the single emphasized thing, glass for grouped quiet things), the active bandish card, filled primary action buttons, inset selector tracks with one filled active state, the KVerdictBar register (filled primary, hairline secondary, naked archive), and the sanctioned root-content haze backdrop",
+  "measure": "single centered column; reading measure capped ~640pt on regular width; compact width uses full measure with margins",
+  "motion": "KStyle.ease is the founder-blessed zen timing curve (0.65,0,0.35,1) for state changes; springs are forbidden; Reduce Motion resolves movement to none and color/opacity feedback to KStyle.easeFast; named exceptions are the active-bandish 0.9s color flood, the cadence work-mode selector's ordered color change (text 220ms, active background 450ms after 130ms), and chat-v16 spatial explanation (card expansion 800ms, stack structure 700ms, history append 500ms, content crossfade 300ms, chrome 400ms); the started-dot keeps the 4s numeric breath, and status/connection dots may breathe opacity only",
+  "color": "semantic only: ring colors (core #212936 / middle #2d4867 / outer #889a9f), signal colors (live #3dd175 / warn #fabb00 / fail #e15554, inline-error #ff9489); never decorative"
+ },
+ "laws": [
+  {
+   "id": "silence-default",
+   "rule": "nothing animates, pulses, badges, or speaks unless information changed and it matters now; absence of UI is the default state",
+   "check": "no persistent spinners; no numbered badges; empty states are one quiet sentence — the chat trunk empty state is a founder-sanctioned exception (2026-08-05): a two-beat greeting question that invites the first turn"
+  },
+  {
+   "id": "one-slot",
+   "rule": "at most one ranked cue per surface at a time; competing cues queue, never stack",
+   "check": "maxSimultaneousCues respected per catalog; review/nudge cards share the single top slot"
+  },
+  {
+   "id": "quiet-acts",
+   "rule": "actions are lowercase words, middle-dot separated, dim until relevant; acts appear on the active thing only, reveal on intent elsewhere; structural selectors alone use uppercase inset tracks",
+   "check": "no bordered quiet acts; borders remain only for a decision register's hairline secondary and confirmation anatomy"
+  },
+  {
+   "id": "staleness-honesty",
+   "rule": "cached content and indicators must declare their age; a stale glance may never present as live truth",
+   "check": "as-of caption present when rendering from cache; dots dim at half opacity while stale"
+  },
+  {
+   "id": "optimism-with-proof",
+   "rule": "optimistic UI within 100ms, durable reconcile behind it; losing writes surface a caption, never vanish",
+   "check": "every optimistic path has queue + reconcile + losing-write caption"
+  },
+  {
+   "id": "irreversible-confirms",
+   "rule": "destructive or irreversible actions take a second tap ('sure?') in place; never a modal",
+   "check": "kill/delete paths use KSecondTapConfirmation pattern"
+  },
+  {
+   "id": "consent-first",
+   "rule": "permissions are asked in context with a reason, at the moment a surface needs them, never at launch",
+   "check": "camera asks on first build/mind visit; HealthKit joins the checklist when unfenced"
+  },
+  {
+   "id": "recognition-over-recall",
+   "rule": "state is visible where the founder acts; no memorized navigation; deep content one gesture from its summary",
+   "check": "Nielsen 1/6: status visible per surface header; drill-ins return with one back gesture"
+  },
+  {
+   "id": "interruption-classes",
+   "rule": "ambient = renders silently; peripheral = may move or dim but never blocks; focal = requires founder intent to appear; nothing self-promotes to focal",
+   "check": "catalog interruptionClass enforced by renderer; packets cannot request focal"
+  },
+  {
+   "id": "honest-motion",
+   "rule": "motion is calm and earns its frequency: state changes use the founder-blessed zen timing curve and never springs; entrances are ease-out shaped; burst/keyboard-frequency actions get no entrance animation; reduce-motion drops movement but never feedback (opacity/color stay); no UI motion over 300ms without a named justification such as the rare active-bandish color flood, ordered cadence selector background, or chat-v16 card/stack/history spatial explanation; chat thinking-to-answer changes crossfade in place and status dots breathe opacity only",
+   "check": "KStyle owns every motion duration, curve, and delay; accessibilityReduceMotion resolves at the token seam; press feedback is immediate; the vendored review-animations skill's ten standards pass on any diff that touches animation"
+  },
+  {
+   "id": "spatial-continuity",
+   "rule": "expansion is travel, never teleportation: a surface that expands grows FROM its resting place — the tapped row, the side card, the collapsed section — via matchedGeometryEffect or an equivalent anchored transform, displacing neighbors along one axis; it returns by the same path. nothing appears in the centre that did not visibly leave an origin; nothing dismisses to a place it did not come from. the origin stays marked while its expansion is open (paper-ink flip or dim), so the founder always knows where the thing lives. derived instances: chat branch side-card expands in place toward the reading column (never a centre modal), bandish pinch grows the card in its slot, needs-you rows jut right into the rail. new expansions MUST derive from this law — an expansion with a novel path needs a named justification in the diff",
+   "check": "any diff adding an expanded/detail presentation names its origin element and shows the shared-geometry pair (or the axis displacement) in code; no full-screen .sheet/.fullScreenCover for content that has a visible origin; the origin's marked-state token exists in KStyle"
+  }
+ ],
+ "controlTaxonomy": {
+  "adoptedIn": "1.5.0",
+  "founderApprovedReferences": [
+   "mind-v18",
+   "bio-v11",
+   "cadence-v7",
+   "chat-v16"
+  ],
+  "selectors": "mono uppercase labels inside a quiet inset track; exactly one active label has a light fill and dark ink",
+  "acts": "lowercase, borderless, and middle-dot separated; use KActRow unless the control is a decision register, lifecycle primary, or confirmation",
+  "verdictRegister": "act-on is filled primary; nod/later is hairline secondary; junk/archive is naked; wire verdict enums remain unchanged",
+  "inputCommit": "send/stop occupies one 44pt circle",
+  "deprecatedRedundancy": "KNowPanel and KBlockRow remain catalog descriptors only; BandishCard owns their product/showcase role",
+  "motionException": "CadenceWorkModeChips changes selected text over 220ms, then the active background over 450ms after a 130ms delay. Chat-v16 expands the same card leftward over 800ms, reorders the stack over 700ms, appends history over 500ms, crossfades content over 300ms, and reveals chrome over 400ms. All use KStyle's zen curve; Reduce Motion removes geometry movement and preserves fast opacity feedback."
+ },
+ "materials": {
+  "comment": "Apple-material scoping, Liquid Glass era: platform materials wrapped behind K semantic modifiers; the K-modifier path wins over raw call sites",
+  "rules": [
+   "platform glass/material effects are permitted only in navigation, column-panel, and environment-haze layers through K semantic modifiers",
+   "raw platform material call sites are never permitted in surface code; any new platform material enters through a K modifier with a doctrine entry before first use",
+   "kColumnPanelTone is the sanctioned material path for genuine floating panels, detail routes, drawers, and sheets; it is not the default tab-root shell",
+   "kEnvironmentHazeBackdrop is the sanctioned material path for tab-root content scroll areas and full-screen route shells; it uses KStyle.hazeMaterial plus KStyle.hazeTintOpacity and resolves to flat nearBlack when Reduce Transparency is enabled"
+  ]
+ },
+ "verification": {
+  "gates": [
+   "catalog-parity: every catalog component exists in code with declared variants/states (KPrimitivesTests)",
+   "token-only: no literal colors/radii/durations in Sources outside KStyle (grep gate)",
+   "screenshot-litmus: showcase baseline diff on every design-touching change; doctrine review for new primitives",
+   "language-litmus (manual/VLM): does the surface read as quiet typography on ink; would it feel wrong in kedar /ui"
+  ]
+ },
+ "disciplines": {
+  "_note": "Layer 4 of the K Design System program — design >> UI. Six disciplines x three tiers: generationRule (auto-applied at gen time), checkable (lint/VLM gate, tagged checkedBy), founderGate (judgment-only, periodic, never automated). Data only — no enforcement lives here (Layer 5's job). satisfiedBy points at a rule this repo already enforces so nothing is duplicated: a bare '<path>' means the whole collection at that dot-path already covers the entry; '<path>::<needle>' means one item in the array at that path covers it (string.includes(needle) for string arrays like verification.gates; item.id === needle for object arrays like laws). A missing satisfiedBy (null) means the entry is genuinely new. Discipline names and tier names are string-identical to kedar/engine/design/doctrine.json's disciplines block (kedar's tests/discipline-parity.test.ts enforces this) — entries themselves may legitimately differ per platform. No code currently parses this file programmatically (checked before adding this key — KPrimitivesTests asserts against the catalog, not doctrine.json), so no reader was added; this stays an additive data key per the evolution rule above.",
+  "interactionDesign": {
+   "generationRule": [
+    {
+     "id": "honest-motion-tokens",
+     "rule": "State changes use the founder-blessed zen timing curve from KStyle; springs are forbidden; entrances are ease-out; burst/keyboard-frequency actions get no entrance animation.",
+     "satisfiedBy": "laws::honest-motion"
+    },
+    {
+     "id": "optimistic-with-reconcile",
+     "rule": "Optimistic UI within 100ms, durable reconcile behind it; losing writes surface a caption, never vanish.",
+     "satisfiedBy": "laws::optimism-with-proof"
+    },
+    {
+     "id": "staleness-honesty-caption",
+     "rule": "Cached content and indicators declare their age; a stale glance never presents as live truth.",
+     "satisfiedBy": "laws::staleness-honesty"
+    },
+    {
+     "id": "quiet-act-styling",
+     "rule": "Actions render as lowercase words, middle-dot separated, dim until relevant; no bordered act buttons outside sanctioned confirmation patterns.",
+     "satisfiedBy": "laws::quiet-acts"
+    }
+   ],
+   "checkable": [
+    {
+     "id": "contrast-floor",
+     "rule": "Text/interactive contrast >= 4.5:1 (body) / 3:1 (large text, UI components) — WCAG 1.4.3.",
+     "checkedBy": "LINT",
+     "canonRubricId": 1,
+     "satisfiedBy": null
+    },
+    {
+     "id": "tap-target-floor",
+     "rule": "Interactive targets >= 44x44pt.",
+     "checkedBy": "LINT",
+     "canonRubricId": 2,
+     "satisfiedBy": null
+    },
+    {
+     "id": "voiceover-labels",
+     "rule": "VoiceOver labels on every interactive element.",
+     "checkedBy": "LINT",
+     "canonRubricId": 3,
+     "satisfiedBy": null
+    },
+    {
+     "id": "reduced-motion-branch",
+     "rule": "Every non-essential animation has a reduced-motion branch.",
+     "checkedBy": "LINT",
+     "canonRubricId": 4,
+     "satisfiedBy": "laws::honest-motion"
+    },
+    {
+     "id": "dynamic-type-survives",
+     "rule": "No fixed-height text containers — Dynamic Type survives.",
+     "checkedBy": "LINT",
+     "canonRubricId": 5,
+     "satisfiedBy": null
+    },
+    {
+     "id": "async-bound-states",
+     "rule": "Every async operation has a bound loading/error/done state — no silent wait over ~400ms.",
+     "checkedBy": "LINT",
+     "canonRubricId": 6,
+     "satisfiedBy": "laws::optimism-with-proof"
+    },
+    {
+     "id": "destructive-confirm-undo",
+     "rule": "Destructive/irreversible actions require a confirm step and a paired undo path.",
+     "checkedBy": "LINT",
+     "canonRubricId": 8,
+     "satisfiedBy": "laws::irreversible-confirms"
+    },
+    {
+     "id": "token-only",
+     "rule": "No hardcoded colors/spacing outside the token set.",
+     "checkedBy": "LINT",
+     "canonRubricId": 9,
+     "satisfiedBy": "verification.gates::token-only"
+    },
+    {
+     "id": "list-continuity",
+     "rule": "List items share a consistent left edge / alignment (continuity).",
+     "checkedBy": "VLM",
+     "canonRubricId": 11,
+     "satisfiedBy": null
+    },
+    {
+     "id": "auto-scroll-overridable",
+     "rule": "Auto-scroll is user-overridable; tool-call chatter is grouped, never spammed line-by-line.",
+     "checkedBy": "LINT",
+     "canonRubricId": 14,
+     "satisfiedBy": null,
+     "note": "mirrors frontier-pattern-ledger item 5 (auto-scroll-lock) — see cs-k/docs/design/frontier-ledger-DRAFT.md, pending founder adoption."
+    },
+    {
+     "id": "hierarchy-cta-count",
+     "rule": "<= 3 primary CTAs per screen, one visually dominant (Hick's law).",
+     "checkedBy": "VLM",
+     "canonRubricId": 16,
+     "satisfiedBy": null
+    },
+    {
+     "id": "fitts-primary-destructive",
+     "rule": "Primary action large + thumb-reachable; destructive action small + distant (Fitts's law).",
+     "checkedBy": "VLM",
+     "canonRubricId": 17,
+     "satisfiedBy": null
+    },
+    {
+     "id": "gestalt-grouping",
+     "rule": "Related content groups legibly via proximity/common-region, without relying on borders or labels alone.",
+     "checkedBy": "VLM",
+     "canonRubricId": 18,
+     "satisfiedBy": null
+    },
+    {
+     "id": "affordance-honesty",
+     "rule": "Everything tappable looks tappable; nothing static looks tappable.",
+     "checkedBy": "VLM",
+     "canonRubricId": 19,
+     "satisfiedBy": null
+    }
+   ],
+   "founderGate": [
+    {
+     "id": "microinteraction-taste-review",
+     "rule": "Does the interaction feel right end-to-end — not just pass the checklist. Periodic founder review, not automatable."
+    }
+   ]
+  },
+  "informationArchitecture": {
+   "generationRule": [
+    {
+     "id": "one-organizing-principle",
+     "rule": "Every surface states one organizing principle (what it's grouped or sorted by) before layout is drawn."
+    }
+   ],
+   "checkable": [
+    {
+     "id": "state-visible-recall",
+     "rule": "State is visible where the founder acts; no memorized navigation; deep content is one gesture from its summary.",
+     "checkedBy": "LINT",
+     "satisfiedBy": "laws::recognition-over-recall"
+    },
+    {
+     "id": "vocabulary-match",
+     "rule": "UI labels match the founder's own vocabulary for a concept — no schema/field-name leaks into copy.",
+     "checkedBy": "VLM",
+     "satisfiedBy": null
+    },
+    {
+     "id": "chunking",
+     "rule": "Flat lists with more than ~10 items are sub-grouped or headed (chunking).",
+     "checkedBy": "VLM",
+     "canonRubricId": 12,
+     "satisfiedBy": null
+    },
+    {
+     "id": "conceptual-model-consistency",
+     "rule": "The same concept (memory, cadence block, tool-call) renders with the same visual grammar across every surface it appears on — composition-diff against the reference capture wins over the static catalog when they disagree.",
+     "checkedBy": "VLM",
+     "canonRubricId": 20,
+     "satisfiedBy": "verification.gates::language-litmus"
+    }
+   ],
+   "founderGate": [
+    {
+     "id": "tree-test-by-recall",
+     "rule": "Quarterly tree-test-by-recall: can the founder navigate to a known feature from memory alone, no search."
+    }
+   ]
+  },
+  "uxArc": {
+   "generationRule": [
+    {
+     "id": "none-yet",
+     "rule": "none yet — no generation-rule entries for UX arc as of v1.4.0. JTBD/Double Diamond artifacts per surface are the design-thinking skill's territory (a later program plan), not a gen-rule here."
+    }
+   ],
+   "checkable": [
+    {
+     "id": "per-surface-states-required",
+     "rule": "Every surface declares its empty / error / first-encounter states as first-class artifacts before shipping — a blanket copy rule does not satisfy this.",
+     "checkedBy": "LINT",
+     "satisfiedBy": null
+    },
+    {
+     "id": "state-preserved-across-nav",
+     "rule": "Navigation never silently drops in-progress state (form input, scroll position, selection).",
+     "checkedBy": "LINT",
+     "canonRubricId": 13,
+     "satisfiedBy": null
+    },
+    {
+     "id": "progressive-disclosure",
+     "rule": "Advanced/debug content is collapsed by default; disclosed on explicit intent.",
+     "checkedBy": "VLM",
+     "canonRubricId": 10,
+     "satisfiedBy": null
+    }
+   ],
+   "founderGate": [
+    {
+     "id": "none-yet",
+     "rule": "none yet — JTBD per surface is deferred to the design-thinking skill (final program plan), not a doctrine founder-gate entry here."
+    }
+   ]
+  },
+  "serviceDesign": {
+   "generationRule": [
+    {
+     "id": "none-yet",
+     "rule": "none yet — no generation-rule entries for service design as of v1.4.0; this discipline is checkable-at-plan-review and founder-gate only."
+    }
+   ],
+   "checkable": [
+    {
+     "id": "frontstage-needs-backstage-owner",
+     "rule": "No frontstage promise ('K asks before touching HealthKit', 'K won't lose your draft') ships without a named backstage owner in cs-k/docs/design/service-blueprint.md.",
+     "checkedBy": "VLM",
+     "satisfiedBy": null,
+     "citesDoc": "cs-k/docs/design/service-blueprint.md"
+    },
+    {
+     "id": "consent-in-context",
+     "rule": "Permissions are asked in context with a reason, at the moment a surface needs them, never at launch.",
+     "checkedBy": "LINT",
+     "satisfiedBy": "laws::consent-first"
+    },
+    {
+     "id": "destructive-second-tap",
+     "rule": "Destructive/irreversible actions take a second tap in place, never a modal.",
+     "checkedBy": "LINT",
+     "satisfiedBy": "laws::irreversible-confirms"
+    }
+   ],
+   "founderGate": [
+    {
+     "id": "quarterly-promise-audit",
+     "rule": "Quarterly: walk every shipped frontstage claim against service-blueprint.md; flag orphaned promises."
+    }
+   ]
+  },
+  "productPrinciples": {
+   "generationRule": [
+    {
+     "id": "defaults-cite-a-principle",
+     "rule": "Every default (not just every choice) cites a principle id from cs-k/docs/design/product-principles.md.",
+     "citesDoc": "cs-k/docs/design/product-principles-DRAFT.md",
+     "docStatus": "draft-pending-founder-review"
+    }
+   ],
+   "checkable": [
+    {
+     "id": "principles-stay-under-five",
+     "rule": "product-principles.md never exceeds 5 named principles — force a trade-off, don't accumulate a wishlist.",
+     "checkedBy": "VLM",
+     "citesDoc": "cs-k/docs/design/product-principles-DRAFT.md",
+     "docStatus": "draft-pending-founder-review"
+    }
+   ],
+   "founderGate": [
+    {
+     "id": "principle-drift-review",
+     "rule": "Quarterly: check principles against real founder decisions for drift or unstated contradiction."
+    }
+   ]
+  },
+  "voice": {
+   "generationRule": [
+    {
+     "id": "copy-checked-against-persona",
+     "rule": "All copy is checked against a written persona doc before it ships.",
+     "satisfiedBy": null,
+     "note": "iOS has no persona doc distinct from kedar's voice.rules yet — port kedar's ruleset or write an iOS-specific persona doc; flagged gap, not silently assumed satisfied."
+    },
+    {
+     "id": "errors-never-deflect",
+     "rule": "Errors state what broke and what's next — never a raw stack trace, error code, or schema name, never a bare 'something went wrong.'",
+     "canonRubricId": 7,
+     "satisfiedBy": null
+    }
+   ],
+   "checkable": [
+    {
+     "id": "silence-protocol",
+     "rule": "Every unprompted message clears an explicit interruption-value threshold before it fires; nothing self-promotes to focal.",
+     "checkedBy": "LINT",
+     "canonRubricId": 15,
+     "satisfiedBy": "laws::interruption-classes"
+    },
+    {
+     "id": "one-slot-per-surface",
+     "rule": "At most one ranked cue per surface at a time; competing cues queue, never stack.",
+     "checkedBy": "LINT",
+     "satisfiedBy": "laws::one-slot"
+    },
+    {
+     "id": "silence-is-default",
+     "rule": "Nothing animates, pulses, badges, or speaks unless information changed and it matters now.",
+     "checkedBy": "LINT",
+     "satisfiedBy": "laws::silence-default"
+    }
+   ],
+   "founderGate": [
+    {
+     "id": "voice-calibration-review",
+     "rule": "Voice calibration reviewed against real transcripts, periodically."
+    }
+   ]
+  }
+ }
+}

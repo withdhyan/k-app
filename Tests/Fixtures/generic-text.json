@@ -1,0 +1,12 @@
+{
+  "id": "b3d5f99ff7169deaa442716b",
+  "viewType": "generic.text",
+  "text": "Hello from a ViewPacket.",
+  "provenance": {
+    "surface": "public",
+    "lane": "deliberate",
+    "plane": "face",
+    "module": "test"
+  },
+  "frontierExcluded": false
+}

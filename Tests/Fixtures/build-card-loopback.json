@@ -1,0 +1,28 @@
+{
+  "id": "build-card-loopback-1",
+  "viewType": "build.card",
+  "text": "Safety-floor deploy approval",
+  "fields": {
+    "title": "Safety-floor deploy approval",
+    "body": "This answer must originate from loopback on the Mac.",
+    "status": "raised",
+    "tier": "loopback",
+    "unitId": "U10"
+  },
+  "action": {
+    "kind": "build.card.answer",
+    "target": "answer-loopback-card",
+    "id": "answer-loopback-card",
+    "intent": "build.card.answer",
+    "args": {
+      "cardId": "build-card-loopback-1"
+    }
+  },
+  "provenance": {
+    "surface": "build",
+    "lane": "runner",
+    "plane": "agent",
+    "module": "build-cards"
+  },
+  "frontierExcluded": false
+}

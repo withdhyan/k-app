@@ -1,0 +1,16 @@
+{
+  "id": "aaaaaaaaaaaaaaaaaaaaaaaa",
+  "viewType": "future.panel",
+  "text": "Fallback body.",
+  "fields": {
+    "title": "Future panel"
+  },
+  "futureField": {
+    "ignored": true
+  },
+  "provenance": {
+    "surface": "public",
+    "lane": "deliberate"
+  },
+  "frontierExcluded": false
+}
